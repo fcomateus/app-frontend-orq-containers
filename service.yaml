@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minha-aplicacao-frontend-service
+spec:
+  selector:
+    app: minha-aplicacao-frontend
+  type: NodePort
+  ports:
+  - name: http
+    port: 80
+    nodePort: 30800

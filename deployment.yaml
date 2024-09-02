@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minha-aplicacao-frontend
+spec:
+  replicas: 2  # Número de réplicas do pod
+  selector:
+    matchLabels:
+      app: minha-aplicacao-frontend
+  template:
+    metadata:
+      labels:
+        app: minha-aplicacao-frontend
+    spec:
+      containers:
+      - name: meu-app-frontend
+        image: meu-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
