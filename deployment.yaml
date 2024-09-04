@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minha-aplicacao-frontend
+  name: meu-app-frontend
 spec:
   replicas: 2  # Número de réplicas do pod
   selector:
     matchLabels:
-      app: minha-aplicacao-frontend
+      app: meu-app-frontend
   template:
     metadata:
       labels:
-        app: minha-aplicacao-frontend
+        app: meu-app-frontend
     spec:
       containers:
       - name: meu-app-frontend
