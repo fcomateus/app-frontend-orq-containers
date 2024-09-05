@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: meu-app-frontend
-        image: meu-app:latest
-        imagePullPolicy: Never
+        image: fcomateus/meu-app-frontend:v2.0
         ports:
         - containerPort: 80
