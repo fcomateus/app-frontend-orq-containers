@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD</title>
+
+    <style>
+        th {
+            text-align: left;
+        }
+
+        td {
+            margin-inline: 6px;
+        }
+    </style>
 </head>
 <body>
     <main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <button id="button">Clique-me</button>
         <table>
+            <thead>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Último Nome
+                </th>
+                <th>
+                    E-mail
+                </th>
+            </thead>
             <tbody id="results"></tbody>
         </table>
     </main>

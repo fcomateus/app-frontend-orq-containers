@@ -1,24 +1,30 @@
 async function getData() {
-    const rawData = await fetch('https://api.github.com/users')
-    const dataUsers = await rawData.json()
-    console.log(dataUsers);
-
     let table = document.getElementById('results')
+    table.innerHTML = ''
+
+    const url = 'http://localhost:9090/users'
+    // const url = 'https://api.github.com/users'
+    const rawData = await fetch(url)
+
+    const dataUsers = await rawData.json()
+    const usersList = dataUsers.data
+    console.log(usersList);
+
     
-    for(const user of dataUsers) {
+    for(const user of usersList) {
         const row = `
             <tr>
                 <td>
-                    ${user.id}
+                    ${user.cpf}
                 </td>
                 <td>
-                    ${user.login}
+                    ${user.name}
                 </td>
                 <td>
-                    <a href="${user.html_url}" target=_blank>Perfil</a>
+                    ${user.last_name}
                 </td>
                 <td>
-                    <img src="${user.avatar_url}" style="width:30px; height:30px;">
+                    ${user.email}
                 </td>
             </tr>
         `
